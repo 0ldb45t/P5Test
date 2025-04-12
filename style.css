@@ -2,6 +2,8 @@ html,
 body {
 	margin: 0;
 	padding: 0;
+	background-color: rgb(59, 59, 59);
+	color: aliceblue;
 }
 canvas {
 	display: block;
