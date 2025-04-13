@@ -1,22 +1,28 @@
 //const dessin = document.getElementById("dessin");
-
+const body = document.getElementsByTagName("body")[0];
 const radioForme = document.getElementById("formeSelect");
 const radioTaille = document.getElementById("tailleSelect");
 const bouton = document.getElementById("go");
 const stop = document.getElementById("clear");
 const tailleMax = window.innerWidth;
-bouton.addEventListener("click", selectionner);
-stop.addEventListener("click", nettoyer);
 const choixRouge = document.getElementById("red");
+choixRouge.style.background = "red";
 const choixVert = document.getElementById("green");
+choixVert.style.background = "green";
 const choixBleu = document.getElementById("blue");
+choixBleu.style.background = "blue";
+
+const choixFond = document.getElementById("fondSelect");
 const test = document.getElementById("testClick");
 const test2 = document.getElementById("testSansClick");
+const corps = document.getElementById("tout");
+let footer = document.createElement("footer");
 let rouge = choixRouge.value;
 let vert = choixVert.value;
 let bleu = choixBleu.value;
-const corps = document.getElementById("tout");
-let footer = document.createElement("footer");
+choixFond.addEventListener("change", changerFond);
+bouton.addEventListener("click", selectionner);
+stop.addEventListener("click", nettoyer);
 footer.innerHTML =
 	'Bastien Bontemps grâce à <a href="https://p5js.org/">p5.js</a> &copy 2025';
 choixRouge.addEventListener("change", colorerSample);
@@ -24,6 +30,29 @@ choixVert.addEventListener("change", colorerSample);
 choixBleu.addEventListener("change", colorerSample);
 window.addEventListener("keypress", pause);
 window.addEventListener("load", instructions);
+function changerFond(e) {
+	switch (choixFond.value) {
+		/*case "quadrillage":
+			body.style.backgroundColor = "none";
+			body.style.background =
+				'linear-gradient(rgba(0, 0, 0, 0.5),rgba(95, 95, 95, 0.5),rgba(0, 0, 0, 0.5)),url("IMAGES/fondg.jpg");';
+
+			break;*/
+		case "sombre":
+			body.style.background = "none";
+			body.style.backgroundColor = "rgb(59, 59, 59)";
+			body.style.color = "aliceblue";
+			radioForme.style.color = "aliceblue";
+			radioTaille.style.color = "aliceblue";
+			choixFond.style.color = "aliceblue";
+			break;
+		case "clair":
+			body.style.background = "none";
+			body.style.backgroundColor = "rgb(228, 228, 228)";
+			body.style.color = "rgb(59, 59, 59)";
+			break;
+	}
+}
 function instructions(e) {
 	if (tailleMax < 1010) {
 		alert(
@@ -101,7 +130,7 @@ function updatePreview() {
 				centerX - taille / 2,
 				centerY - taille / 16,
 				taille,
-				taille / 8
+				taille / 3
 			);
 			break;
 	}

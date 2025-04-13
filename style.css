@@ -2,22 +2,38 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-
+	background: linear-gradient(
+			rgba(0, 0, 0, 0.5),
+			rgba(95, 95, 95, 0.5),
+			rgba(0, 0, 0, 0.5)
+		),
+		url("IMAGES/fondg.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: 110%;
 	/* background-color: rgb(59, 59, 59); */
 	color: aliceblue;
 	font-family: "Agdasima", sans-serif;
 	font-style: bolder;
 	height: 100%;
+	color: antiquewhite;
 }
+
 canvas {
 	margin-top: 10px;
 }
 fieldset {
+	align-self: center;
 	flex-basis: 15%;
 	display: flex;
 	grid-column-start: 3;
 	grid-column-end: 4;
+	border: 2px inset rgba(0, 0, 0, 0.8);
 	border-radius: 15px;
+}
+#previewCanvas {
+	background: radial-gradient(rgba(70, 69, 69, 0.3), rgba(0, 0, 0, 0));
 }
 fieldset,
 #test,
@@ -27,6 +43,7 @@ fieldset,
 #clear,
 #formeSelect,
 #tailleSelect,
+#fondSelect,
 #testClick,
 #testSansClick {
 	border-radius: 15px;
@@ -45,9 +62,38 @@ fieldset,
 	width: 100%; /* Assure que le div occupe toute la largeur */
 }
 select {
-	background-color: blanchedalmond;
+	color: rgb(0, 0, 0);
+	background: radial-gradient(rgba(177, 175, 175, 0.1), rgba(0, 0, 0, 0.2));
+}
+input[type="range"] {
+	overflow: hidden;
+	width: 80px;
+	color: rgba(70, 69, 69);
+	background-color: #ffffff;
+}
+input[type="range"] {
+	overflow: hidden;
+	width: 80px;
+	-webkit-appearance: none;
+	background-color: #ffffff;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+	height: 10px;
+	-webkit-appearance: none;
+	color: #000000;
+	margin-top: -1px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	width: 10px;
+	-webkit-appearance: none;
+	height: 10px;
+	cursor: ew-resize;
+	background: #434343;
+	box-shadow: -80px 0 0 80px #000000;
 }
 .topo {
+	background: radial-gradient(rgba(70, 69, 69, 0.1), rgba(0, 0, 0, 0));
 	grid-column-start: 2;
 	grid-column-end: 3;
 	display: flex;
@@ -76,12 +122,12 @@ ol {
 	width: 355px;
 	height: 150px;
 	font-size: larger;
-	color: antiquewhite;
 }
 li {
 	text-align: end;
 }
 .couleurs {
+	background: radial-gradient(rgba(70, 69, 69, 0.6), rgba(0, 0, 0, 0.2));
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -89,25 +135,15 @@ li {
 h1 {
 	margin-left: 30px;
 	align-self: center;
-	color: antiquewhite;
 }
 #clear {
-	background-color: brown;
+	background-color: rgba(99, 24, 24, 0.7);
 	color: aliceblue;
 }
 #go {
-	background-color: aquamarine;
+	background-color: rgba(0, 165, 0, 0.7);
 }
-#testClick,
-#testSansClick {
-	width: 65px;
-	height: 65px;
-	display: flex;
-	flex-direction: column;
-	justify-items: center;
-	align-items: center;
-	border: 1px solid black;
-}
+
 #samples {
 	display: flex;
 	flex-direction: column;
@@ -115,6 +151,12 @@ h1 {
 	align-items: center;
 }
 @media screen and (max-width: 1010px) {
+	body {
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: 200%;
+	}
 	.topo {
 		display: none;
 	}

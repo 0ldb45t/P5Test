@@ -33,6 +33,7 @@
 						</ol>
 					</div>
 					<div id="samples">
+						<p style="margin: 0px">Sample</p>
 						<canvas
 							id="previewCanvas"
 							width="100"
@@ -44,7 +45,7 @@
 							<select name="forme" id="formeSelect">
 								<option value="carre">Carrés</option>
 								<option value="cercle">Cercles</option>
-								<option value="rectangle">Lignes</option>
+								<option value="rectangle">Rectangles</option>
 							</select>
 							<select name="taille" id="tailleSelect">
 								<option value="25">25px</option>
@@ -52,8 +53,11 @@
 								<option value="75">75px</option>
 								<option value="100">100px</option>
 							</select>
+							<select name="background" id="fondSelect">
+								<option value="sombre">Sombre</option>
+								<option value="clair">Clair</option>
+							</select>
 							<fieldset class="couleurs">
-								<label for="red">Rouge</label>
 								<input
 									type="range"
 									id="red"
@@ -62,8 +66,6 @@
 									step="1"
 									value="161"
 								/>
-								<label for="green">Vert</label>
-
 								<input
 									type="range"
 									id="green"
@@ -72,8 +74,6 @@
 									step="1"
 									value="161"
 								/>
-								<label for="blue">Bleu</label>
-
 								<input
 									type="range"
 									id="blue"
@@ -91,7 +91,6 @@
 			</form>
 			<script src="libraries/p5.min.js"></script>
 			<script src="libraries/p5.sound.min.js"></script>
-			<script src="sketchFond.js"></script>
 			<script src="sketch.js"></script>
 			<script src="ScriptPerso/general.js"></script>
 		</div>
