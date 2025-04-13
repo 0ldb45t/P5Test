@@ -1,10 +1,3 @@
-class PatternPerso {
-	constructor(forme, taille) {
-		this.forme = forme;
-		this.taille = taille;
-		this.rotation = 0;
-	}
-}
 function setup() {
 	let canvas = createCanvas(tailleMax - 50, 700);
 	canvas.parent("tout");
@@ -40,7 +33,7 @@ function drawTest(fct) {
 	} else {
 		translate(mouseX, mouseY);
 		rotate(rotationGlobale);
-		fill(244);
+		fill(rouge - 10, vert - 10, bleu - 10);
 	}
 	fct(0, 0, taillePrinted, taillePrinted - 50);
 }

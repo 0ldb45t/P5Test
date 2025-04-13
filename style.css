@@ -17,7 +17,7 @@ fieldset {
 .top {
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr; /* Deux colonnes de taille égale */
+	grid-template-columns: 1fr 1fr 1fr 1fr; /* Deux colonnes de taille égale */
 	grid-gap: 20px; /* Ajoute un espace entre les colonnes */
 	align-items: end; /* Aligne les éléments verticalement */
 }
@@ -64,6 +64,11 @@ h1 {
 }
 #go {
 	background-color: aquamarine;
+}
+#test {
+	width: 65px;
+	height: 65px;
+	background-color: aqua;
 }
 @media screen and (max-width: 750px) {
 	ol {

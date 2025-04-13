@@ -9,21 +9,25 @@ stop.addEventListener("click", nettoyer);
 const choixRouge = document.getElementById("red");
 const choixVert = document.getElementById("green");
 const choixBleu = document.getElementById("blue");
+const test = document.getElementById("test");
 let rouge = choixRouge.value;
 let vert = choixVert.value;
 let bleu = choixBleu.value;
 let etatPause = 0;
-choixRouge.addEventListener("change", () => (rouge = choixRouge.value));
-choixVert.addEventListener("change", () => (vert = choixVert.value));
-choixBleu.addEventListener("change", () => (bleu = choixBleu.value));
+choixRouge.addEventListener("change", colorerSample);
+choixVert.addEventListener("change", colorerSample);
+choixBleu.addEventListener("change", colorerSample);
 window.addEventListener("keypress", pause);
 function pause(e) {
 	if (e.code === "Space") isLooping() ? noLoop() : loop();
 }
-// functionchoixCouleur (e){
-// 	rouge= choixRouge.value;
-
-// }
+function colorerSample() {
+	rouge = choixRouge.value;
+	bleu = choixBleu.value;
+	vert = choixVert.value;
+	test.style.backgroundColor =
+		"rgb(" + rouge + ", " + vert + ", " + bleu + ")";
+}
 
 let taille = 0;
 let forme = "";
@@ -40,7 +44,7 @@ function selectionner(e) {
 	daron ? "" : setup();
 	taillePrinted = taille;
 	formePrinted = forme;
-	console.log(rouge);
+	console.log(test);
 	draw();
 }
 function nettoyer() {
