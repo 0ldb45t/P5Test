@@ -37,4 +37,4 @@ JavaScript vanilla
 p5.js – bibliothèque de dessin
 
 p5.sound (chargée mais pas encore exploitée)
-![Aperçu du projet](Capture d’écran 2025-04-13 174821.png)
+
