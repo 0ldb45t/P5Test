@@ -7,46 +7,50 @@
 		<title>Sketch</title>
 
 		<link rel="stylesheet" type="text/css" href="style.css" />
-
-		<script src="libraries/p5.min.js"></script>
-		<script src="libraries/p5.sound.min.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Allerta+Stencil&family=Baskervville+SC&family=Forum&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 
 	<body>
 		<div id="tout">
-			<!--<div class="container">
-			<div id="dessin"></div>
-		</div>
-		<div class="container">
-			<div id="dessin2"></div>
-		</div>-->
 			<form>
 				<div class="top">
 					<h1>sK3tch-!t</h1>
 					<div class="topo">
 						<ol>
-							<li>Choisis une forme</li>
-							<li>GO</li>
-							<li>Survol pour dessiner</li>
-							<li>Cliques pour pivoter et changer la teinte</li>
-							<li>
+							<li class="right">Survol pour dessiner</li>
+							<li class="left">
+								Cliques pour pivoter et changer la teinte
+							</li>
+							<li class="right">
 								Appuies sur ESPACE pour arrêter/reprendre le
 								dessin
 							</li>
 						</ol>
 					</div>
-					<div id="test">Sample</div>
+					<div id="samples">
+						<canvas
+							id="previewCanvas"
+							width="100"
+							height="100"
+						></canvas>
+					</div>
 					<div class="tab">
 						<fieldset>
 							<select name="forme" id="formeSelect">
-								<option value="carre">Carré</option>
-								<option value="cercle">Cercle</option>
-								<option value="rectangle">Rectangle</option>
+								<option value="carre">Carrés</option>
+								<option value="cercle">Cercles</option>
+								<option value="rectangle">Lignes</option>
 							</select>
 							<select name="taille" id="tailleSelect">
+								<option value="25">25px</option>
+								<option value="50">50px</option>
 								<option value="75">75px</option>
-								<option value="125">125px</option>
-								<option value="200">200px</option>
+								<option value="100">100px</option>
 							</select>
 							<fieldset class="couleurs">
 								<label for="red">Rouge</label>
@@ -85,6 +89,9 @@
 					</div>
 				</div>
 			</form>
+			<script src="libraries/p5.min.js"></script>
+			<script src="libraries/p5.sound.min.js"></script>
+			<script src="sketchFond.js"></script>
 			<script src="sketch.js"></script>
 			<script src="ScriptPerso/general.js"></script>
 		</div>

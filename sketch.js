@@ -1,5 +1,5 @@
 function setup() {
-	let canvas = createCanvas(tailleMax - 50, 700);
+	let canvas = createCanvas(tailleMax - 50, 745);
 	canvas.parent("tout");
 	angleMode("degrees");
 }
@@ -25,6 +25,17 @@ function draw() {
 }
 function drawTest(fct) {
 	if (fct === undefined) return;
+	/*if (!mouseIsPressed) {
+		push();
+		translate(mouseX, mouseY);
+		rotate(rotationGlobale);
+		fill(rouge - 40, vert - 40, bleu - 40, 100); // transparence
+		noStroke();
+		fct === rect
+			? fct(0, 0, taillePrinted, taillePrinted / 23)
+			: fct(0, 0, taillePrinted);
+		pop();
+	}*/
 	if (mouseIsPressed === true) {
 		fill(rouge, vert, bleu);
 		rotationGlobale++;
@@ -33,7 +44,9 @@ function drawTest(fct) {
 	} else {
 		translate(mouseX, mouseY);
 		rotate(rotationGlobale);
-		fill(rouge - 10, vert - 10, bleu - 10);
+		fill(rouge - 40, vert - 40, bleu - 40, 79);
 	}
-	fct(0, 0, taillePrinted, taillePrinted - 50);
+	fct === rect
+		? fct(0, 0, taillePrinted, taillePrinted / 3)
+		: fct(0, 0, taillePrinted);
 }

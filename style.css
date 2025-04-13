@@ -2,8 +2,12 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	background-color: rgb(59, 59, 59);
+
+	/* background-color: rgb(59, 59, 59); */
 	color: aliceblue;
+	font-family: "Agdasima", sans-serif;
+	font-style: bolder;
+	height: 100%;
 }
 canvas {
 	margin-top: 10px;
@@ -11,14 +15,27 @@ canvas {
 fieldset {
 	flex-basis: 15%;
 	display: flex;
-	grid-column-start: 1;
-	grid-column-end: 2;
+	grid-column-start: 3;
+	grid-column-end: 4;
+	border-radius: 15px;
+}
+fieldset,
+#test,
+#topo,
+#top,
+#go,
+#clear,
+#formeSelect,
+#tailleSelect,
+#testClick,
+#testSansClick {
+	border-radius: 15px;
 }
 .top {
 	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr; /* Deux colonnes de taille égale */
-	grid-gap: 20px; /* Ajoute un espace entre les colonnes */
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Deux colonnes de taille égale */
+	grid-gap: 15px; /* Ajoute un espace entre les colonnes */
 	align-items: end; /* Aligne les éléments verticalement */
 }
 #tout {
@@ -40,15 +57,29 @@ select {
 	justify-content: flex-start;
 	align-items: flex-start;
 	padding: 10px;
+	text-align: end;
+}
+.right {
+	text-align: end;
+}
+.left {
+	text-align: start;
 }
 ol {
-	list-style-type: upper-roman;
+	list-style-type: none;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
 	gap: 10px;
+	width: 355px;
+	height: 150px;
+	font-size: larger;
+	color: antiquewhite;
+}
+li {
+	text-align: end;
 }
 .couleurs {
 	display: flex;
@@ -56,7 +87,9 @@ ol {
 	flex-wrap: wrap;
 }
 h1 {
-	margin-left: 5px;
+	margin-left: 30px;
+	align-self: center;
+	color: antiquewhite;
 }
 #clear {
 	background-color: brown;
@@ -65,13 +98,41 @@ h1 {
 #go {
 	background-color: aquamarine;
 }
-#test {
+#testClick,
+#testSansClick {
 	width: 65px;
 	height: 65px;
-	background-color: aqua;
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	border: 1px solid black;
 }
-@media screen and (max-width: 750px) {
-	ol {
+#samples {
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+}
+@media screen and (max-width: 1010px) {
+	.topo {
 		display: none;
+	}
+	.top {
+		grid-gap: 4px;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	h1 {
+		margin-left: 5px;
+		grid-column-start: 2;
+		grid-column-end: 3;
+	}
+	.sample {
+		grid-column-start: 3;
+		grid-column-end: 4;
+	}
+	.tab {
+		grid-column-start: 4;
+		grid-column-end: 5;
 	}
 }
