@@ -6,41 +6,41 @@ class PatternPerso {
 	}
 }
 function setup() {
-	createCanvas(700, 700);
+	let canvas = createCanvas(tailleMax - 50, 700);
+	canvas.parent("tout");
 	angleMode("degrees");
 }
 
 let fct;
 
-// switch (formePrinted) {
-// 	case "carre":
-// 		fct = square;
-// 		break;
-// 	case "cercle":
-// 		fct = circle;
-// 		break;
-// 	case "rectangle":
-// 		fct = rect;
-// 		break;
-// 	default:
-// 		break;
-// }
 function draw() {
-	fct = formePrinted.forme;
+	switch (formePrinted) {
+		case "carre":
+			fct = square;
+			break;
+		case "cercle":
+			fct = circle;
+			break;
+		case "rectangle":
+			fct = rect;
+			break;
+		default:
+			break;
+	}
 	forme = "";
 	drawTest(fct);
 }
 function drawTest(fct) {
 	if (fct === undefined) return;
 	if (mouseIsPressed === true) {
-		fill(114);
+		fill(rouge, vert, bleu);
 		rotationGlobale++;
 		translate(mouseX, mouseY);
 		rotate(rotationGlobale);
 	} else {
 		translate(mouseX, mouseY);
 		rotate(rotationGlobale);
-		fill(255);
+		fill(244);
 	}
 	fct(0, 0, taillePrinted, taillePrinted - 50);
 }

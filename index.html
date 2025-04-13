@@ -13,39 +13,75 @@
 	</head>
 
 	<body>
-		<!--<div class="container">
+		<div id="tout">
+			<!--<div class="container">
 			<div id="dessin"></div>
 		</div>
 		<div class="container">
 			<div id="dessin2"></div>
 		</div>-->
-		<form>
-			<div class="tab">
-				<fieldset>
-					<input type="radio" value="carre" class="forme" />
-					<label for="carre">Carré</label>
-					<input type="radio" value="cercle" class="forme" />
-					<label for="cercle">Cercle</label>
-					<input type="radio" value="rectangle" class="forme" />
-					<label for="rectangle">Rectangle</label>
-				</fieldset>
-				<fieldset>
-					<input type="radio" value="75" class="taille" />
-					<label for="carre">75px</label>
-					<input type="radio" value="125" class="taille" />
-					<label for="cercle">125px</label>
-					<input type="radio" value="200" class="taille" />
-					<label for="rectangle">200px</label>
-				</fieldset>
-			</div>
-			<!--<fieldset>
-				<input type="radio" value="15" class="rotation" />
-				<label for="carre">+15°</label>
-				<input type="radio" value="-15" class="rotation" />
-				<label for="cercle">-15°</label>
-			</fieldset>-->
-		</form>
-		<script src="sketch.js"></script>
-		<script src="ScriptPerso/general.js"></script>
+			<form>
+				<div class="top">
+					<h1>sK3tch-!t</h1>
+					<div class="topo">
+						<ol>
+							<li>Choisis une forme</li>
+							<li>GO</li>
+							<li>Survol pour dessiner</li>
+							<li>Clic pour pivoter et changer la teinte</li>
+						</ol>
+					</div>
+					<div class="tab">
+						<fieldset>
+							<select name="forme" id="formeSelect">
+								<option value="carre">Carré</option>
+								<option value="cercle">Cercle</option>
+								<option value="rectangle">Rectangle</option>
+							</select>
+							<select name="taille" id="tailleSelect">
+								<option value="75">75px</option>
+								<option value="125">125px</option>
+								<option value="200">200px</option>
+							</select>
+							<fieldset class="couleurs">
+								<label for="red">Rouge</label>
+								<input
+									type="range"
+									id="red"
+									min="0"
+									max="255"
+									step="1"
+									value="161"
+								/>
+								<label for="green">Vert</label>
+
+								<input
+									type="range"
+									id="green"
+									min="0"
+									max="255"
+									step="1"
+									value="161"
+								/>
+								<label for="blue">Bleu</label>
+
+								<input
+									type="range"
+									id="blue"
+									min="0"
+									max="255"
+									step="1"
+									value="161"
+								/>
+							</fieldset>
+							<button id="go">Go</button>
+							<button id="clear">Clear</button>
+						</fieldset>
+					</div>
+				</div>
+			</form>
+			<script src="sketch.js"></script>
+			<script src="ScriptPerso/general.js"></script>
+		</div>
 	</body>
 </html>

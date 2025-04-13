@@ -1,44 +1,48 @@
 //const dessin = document.getElementById("dessin");
-const radiosForme = document.querySelectorAll(".forme");
-radiosForme.forEach((bouton) => bouton.addEventListener("click", selectionner));
-const radiosTaille = document.querySelectorAll(".taille");
+const radioForme = document.getElementById("formeSelect");
+const radioTaille = document.getElementById("tailleSelect");
+const bouton = document.getElementById("go");
+const stop = document.getElementById("clear");
+const tailleMax = window.innerWidth;
+bouton.addEventListener("click", selectionner);
+stop.addEventListener("click", nettoyer);
+const choixRouge = document.getElementById("red");
+const choixVert = document.getElementById("green");
+const choixBleu = document.getElementById("blue");
+let rouge = choixRouge.value;
+let vert = choixVert.value;
+let bleu = choixBleu.value;
+let etatPause = 0;
+choixRouge.addEventListener("change", () => (rouge = choixRouge.value));
+choixVert.addEventListener("change", () => (vert = choixVert.value));
+choixBleu.addEventListener("change", () => (bleu = choixBleu.value));
+window.addEventListener("keypress", pause);
+function pause(e) {
+	if (e.code === "Space") isLooping() ? noLoop() : loop();
+}
+// functionchoixCouleur (e){
+// 	rouge= choixRouge.value;
+
+// }
 
 let taille = 0;
 let forme = "";
 let rotation = 0;
 let rotationGlobale = 0;
 let daron;
-let s;
-let taillePrinted = 0;
-let formePrinted = {
-	"carre": p5.square,
-	"cercle": p5.circle,
-	"rectangle": p5.rect,
-};
-radiosTaille.forEach((bouton) =>
-	bouton.addEventListener("click", selectionner)
-);
+let formePrinted = "";
 
 function selectionner(e) {
-	radiosForme.forEach((bouton) =>
-		bouton.className == e.srcElement.className &&
-		bouton.value != e.srcElement.value
-			? (bouton.checked = false)
-			: (forme = e.srcElement.value)
-	);
-
-	radiosTaille.forEach((bouton) =>
-		bouton.className == e.srcElement.className &&
-		bouton.value != e.srcElement.value
-			? (bouton.checked = false)
-			: (taille = e.srcElement.value)
-	);
-	if (taille !== 0 && forme !== "") {
-		daron = document.getElementById("defaultCanvas0");
-		daron ? "" : setup();
-		taillePrinted = taille;
-		formePrinted[forme] = forme;
-		taille = 0;
-		draw();
-	}
+	e.preventDefault();
+	forme = radioForme.value;
+	taille = radioTaille.value;
+	daron = document.getElementById("defaultCanvas0");
+	daron ? "" : setup();
+	taillePrinted = taille;
+	formePrinted = forme;
+	console.log(rouge);
+	draw();
+}
+function nettoyer() {
+	setup();
 }

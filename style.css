@@ -6,15 +6,67 @@ body {
 	color: aliceblue;
 }
 canvas {
-	display: block;
-	margin: 50px;
+	margin-top: 10px;
 }
 fieldset {
 	flex-basis: 15%;
+	display: flex;
+	grid-column-start: 1;
+	grid-column-end: 2;
 }
-.tab {
-	margin: 60px;
-	width: 15%;
+.top {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr; /* Deux colonnes de taille égale */
+	grid-gap: 20px; /* Ajoute un espace entre les colonnes */
+	align-items: end; /* Aligne les éléments verticalement */
+}
+#tout {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+	width: 100%; /* Assure que le div occupe toute la largeur */
+}
+select {
+	background-color: blanchedalmond;
+}
+.topo {
+	grid-column-start: 2;
+	grid-column-end: 3;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	height: 110px;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 10px;
+}
+ol {
+	list-style-type: upper-roman;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	gap: 10px;
+}
+.couleurs {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+h1 {
+	margin-left: 5px;
+}
+#clear {
+	background-color: brown;
+	color: aliceblue;
+}
+#go {
+	background-color: aquamarine;
+}
+@media screen and (max-width: 750px) {
+	ol {
+		display: none;
+	}
 }
