@@ -46,7 +46,4 @@ function drawTest(fct) {
 		rotate(rotationGlobale);
 		fill(rouge - 40, vert - 40, bleu - 40, 79);
 	}
-	fct === rect
-		? fct(0, 0, taillePrinted, taillePrinted / 3)
-		: fct(0, 0, taillePrinted);
 }
